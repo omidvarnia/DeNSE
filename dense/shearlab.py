@@ -1,7 +1,7 @@
 ### Shearlab module for Shearlab.jl backend in python
 
 # Import libraries
-import julia
+from julia.api import Julia
 import matplotlib.pyplot as plt
 import pylab
 from numpy import ceil
@@ -15,11 +15,12 @@ __all__ = ('load_julia_with_Shearlab','load_image','imageplot','Shearlabsystem2D
 
 # Function to load Shearlab
 def load_julia_with_Shearlab():
+        
+    j = Julia(compiled_modules=False)
     # Importing base
-    j = julia.Julia()#, debug='False')
-    j.eval('using Shearlab')
-    j.eval('using PyPlot')
-    j.eval('using Images')
+    j.eval('using Shearlab') # Importing Shearlab in Julia
+    j.eval('using PyPlot') # Importing PyPlot in Julia
+    j.eval('using Images') # Importing Images in Julia
     return j
 
 

@@ -3,7 +3,7 @@
 # Import libraries
 import datagen as dg
 import numpy as np
-import shearlab
+from dense import shearlab
 import matplotlib.pyplot as plt
 from itertools import compress
 from scipy.signal import convolve2d
